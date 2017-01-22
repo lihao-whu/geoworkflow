@@ -1,0 +1,1279 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY UrbanFunctionalZoning "http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/zhang/ontologies/2014/11/untitled-ontology-56#"
+     xml:base="http://www.semanticweb.org/zhang/ontologies/2014/11/untitled-ontology-56"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:UrbanFunctionalZoning="http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning"/>
+    
+
+
+   
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#BlogNumberRatio -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;BlogNumberRatio">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;AbstractTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#BlogNumberStat -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;BlogNumberStat">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;AbstractTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#BlogNumberperHour -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;BlogNumberperHour">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;SimpleTask"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;BlogNumberStat"/>
+        <UrbanFunctionalZoning:invoke rdf:resource="&UrbanFunctionalZoning;S-BlogNumberperHour"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#BlogPerHourRatio -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;BlogPerHourRatio">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;SimpleTask"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;BlogNumberRatio"/>
+        <UrbanFunctionalZoning:invoke rdf:resource="&UrbanFunctionalZoning;S-BlogPerHourRatio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#CluserByK-means -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;CluserByK-means">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;SimpleTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#Cluster -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;Cluster">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;AbstractTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#DensityCalc -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;DensityCalc">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;SimpleTask"/>
+        <UrbanFunctionalZoning:invoke rdf:resource="&UrbanFunctionalZoning;S-DensityCalc"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;SumDensity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#DivideByGrid -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;DivideByGrid">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;SimpleTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#GenerateCloud -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;GenerateCloud">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;AbstractTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#GetBlogdata -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;GetBlogdata">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;SimpleTask"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;GetData"/>
+        <UrbanFunctionalZoning:invoke rdf:resource="&UrbanFunctionalZoning;S-GetBlogdata"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#GetData -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;GetData">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;AbstractTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#GetPOIratio -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;GetPOIratio">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;SimpleTask"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;POIratio"/>
+        <UrbanFunctionalZoning:invoke rdf:resource="&UrbanFunctionalZoning;S-GetPOIratio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#GetPeriodBlog -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;GetPeriodBlog">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;SimpleTask"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;PeriodBlogData"/>
+        <UrbanFunctionalZoning:invoke rdf:resource="&UrbanFunctionalZoning;S-GetPeriodBlog"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#GetText -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;GetText">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;AbstractTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#GetTextData -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;GetTextData">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;SimpleTask"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;GetText"/>
+        <UrbanFunctionalZoning:invoke rdf:resource="&UrbanFunctionalZoning;S-GetTextData"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#GridCluster -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;GridCluster">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;ComplexTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#GridDistriMap -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;GridDistriMap">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;SimpleTask"/>
+        <UrbanFunctionalZoning:invoke rdf:resource="&UrbanFunctionalZoning;S-GridDistriMap"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;Visualization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#GridDivision -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;GridDivision">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;SimpleTask"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;RegionDivision"/>
+        <UrbanFunctionalZoning:invoke rdf:resource="&UrbanFunctionalZoning;S-GridDivision"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#GridStandardisedCluster -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;GridStandardisedCluster">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;SimpleTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#K-meansCluser -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;K-meansCluser">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;SimpleTask"/>
+        <UrbanFunctionalZoning:invoke rdf:resource="&UrbanFunctionalZoning;S-CluserByK-means"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;TimeDistriCluster"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#Overlay -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;Overlay">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;SimpleTask"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;OverlayAnalysis"/>
+        <UrbanFunctionalZoning:invoke rdf:resource="&UrbanFunctionalZoning;S-Overlay"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#OverlayAnalysis -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;OverlayAnalysis">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;AbstractTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#POIVisualization -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;POIVisualization">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;ComplexTask"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;Visualization"/>
+        <UrbanFunctionalZoning:hasSubTask rdf:resource="&UrbanFunctionalZoning;sequence19"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#POIdata -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;POIdata">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Parameter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#POIratio -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;POIratio">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;AbstractTask"/>
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;SimpleTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#PeriodBlogData -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;PeriodBlogData">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;AbstractTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#PeriodBlogDensity -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;PeriodBlogDensity">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;AbstractTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#PeriodDensity -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;PeriodDensity">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;AbstractTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#PeriodDensityCalc -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;PeriodDensityCalc">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;ComplexTask"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;PeriodDensity"/>
+        <UrbanFunctionalZoning:hasSubTask rdf:resource="&UrbanFunctionalZoning;sequence13"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#PeriodDensityMap -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;PeriodDensityMap">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;SimpleTask"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;PeriodBlogDensity"/>
+        <UrbanFunctionalZoning:invoke rdf:resource="&UrbanFunctionalZoning;S-PeriodDensityMap"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#PolygonDivision -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;PolygonDivision">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;SimpleTask"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;RegionDivision"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#RSMethod -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;RSMethod">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;ComplexTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#RangeStat -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;RangeStat">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;AbstractTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#RangeStatistics -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;RangeStatistics">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;ComplexTask"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;RangeStat"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;sequence7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#RegionDivision -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;RegionDivision">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;AbstractTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#RegionalDivision -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;RegionalDivision">
+        <UrbanFunctionalZoning:hasSubTask rdf:resource="&UrbanFunctionalZoning;GridDivision"/>
+        <UrbanFunctionalZoning:hasSubTask rdf:resource="&UrbanFunctionalZoning;PolygonDivision"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;RegionDivision"/>
+        <UrbanFunctionalZoning:hasSubTask rdf:resource="&UrbanFunctionalZoning;RoadDivision"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#RoadDivision -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;RoadDivision">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;SimpleTask"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;RegionDivision"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#S-BlogNumberperHour -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;S-BlogNumberperHour">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Service"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#S-BlogPerHourRatio -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;S-BlogPerHourRatio">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Service"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#S-CluserByK-means -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;S-CluserByK-means">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Service"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#S-DensityCalc -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;S-DensityCalc">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Service"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#S-GetBlogdata -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;S-GetBlogdata">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Service"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#S-GetPOIratio -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;S-GetPOIratio">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Service"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#S-GetPeriodBlog -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;S-GetPeriodBlog">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Service"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#S-GetTextData -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;S-GetTextData">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Service"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#S-GridDistriMap -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;S-GridDistriMap">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Service"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#S-GridDivision -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;S-GridDivision">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Service"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#S-GridStandardisedCluster -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;S-GridStandardisedCluster">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Service"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#S-Overlay -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;S-Overlay">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Service"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#S-PeriodDensityMap -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;S-PeriodDensityMap">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Service"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#S-StandardisedPeriodDensity -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;S-StandardisedPeriodDensity">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Service"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#S-TimeVisualization -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;S-TimeVisualization">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Service"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#S-VectorDistriMap -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;S-VectorDistriMap">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Service"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#S-WordCliping -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;S-WordCliping">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Service"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#S-WordCloud -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;S-WordCloud">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Service"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#SocialmediaMethod -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;SocialmediaMethod">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;ComplexTask"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;UrbanFunctionalZoning"/>
+        <UrbanFunctionalZoning:hasSubTask rdf:resource="&UrbanFunctionalZoning;sequence1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#StandardisedDensityMap -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;StandardisedDensityMap">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;AbstractTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#StandardisedPeriodDensity -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;StandardisedPeriodDensity">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;SimpleTask"/>
+        <UrbanFunctionalZoning:invoke rdf:resource="&UrbanFunctionalZoning;S-StandardisedPeriodDensity"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;StandardisedDensityMap"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#StandardizedDensityCluser -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;StandardizedDensityCluser">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;AbstractTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#SumDensity -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;SumDensity">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;AbstractTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#TextVisualization -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;TextVisualization">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;ComplexTask"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;Visualization"/>
+        <UrbanFunctionalZoning:hasSubTask rdf:resource="&UrbanFunctionalZoning;sequence16"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#TimeDistriCluster -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;TimeDistriCluster">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;AbstractTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#TimeVisualization -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;TimeVisualization">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;SimpleTask"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;Visualization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#TwoStepCluster -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;TwoStepCluster">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;SimpleTask"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;TimeDistriCluster"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#UrbanFunctionalZoning -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;UrbanFunctionalZoning">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;AbstractTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#VectorCluster -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;VectorCluster">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;ComplexTask"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;Cluster"/>
+        <UrbanFunctionalZoning:hasSubTask rdf:resource="&UrbanFunctionalZoning;sequence4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#VectorDistriMap -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;VectorDistriMap">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;SimpleTask"/>
+        <UrbanFunctionalZoning:invoke rdf:resource="&UrbanFunctionalZoning;S-VectorDistriMap"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;Visualization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#Visualization -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;Visualization">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;AbstractTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#WordClip -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;WordClip">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;AbstractTask"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#WordCliping -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;WordCliping">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;SimpleTask"/>
+        <UrbanFunctionalZoning:invoke rdf:resource="&UrbanFunctionalZoning;S-WordCliping"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;WordClip"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#WordCloud -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;WordCloud">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;SimpleTask"/>
+        <UrbanFunctionalZoning:implement rdf:resource="&UrbanFunctionalZoning;GenerateCloud"/>
+        <UrbanFunctionalZoning:invoke rdf:resource="&UrbanFunctionalZoning;S-WordCloud"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#area -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;area">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Parameter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#blogperhour -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;blogperhour">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Parameter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#blogtext -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;blogtext">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Parameter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#gridblogratio -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;gridblogratio">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Parameter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#griddata -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;griddata">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Parameter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#nir -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;nir">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Parameter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#nonthemeblog -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;nonthemeblog">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Parameter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#periodblogratio -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;periodblogratio">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Parameter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence1 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence1">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+        <UrbanFunctionalZoning:rest rdf:resource="&UrbanFunctionalZoning;sequence2"/>
+        <UrbanFunctionalZoning:first rdf:resource="&UrbanFunctionalZoning;taskinstance1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence10 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence10">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence11 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence11">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence12 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence12">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence13 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence13">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+        <UrbanFunctionalZoning:rest rdf:resource="&UrbanFunctionalZoning;sequence14"/>
+        <UrbanFunctionalZoning:first rdf:resource="&UrbanFunctionalZoning;taskinstance13"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence14 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence14">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+        <UrbanFunctionalZoning:first rdf:resource="&UrbanFunctionalZoning;sequence15"/>
+        <UrbanFunctionalZoning:first rdf:resource="&UrbanFunctionalZoning;taskinstance14"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence15 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence15">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+        <UrbanFunctionalZoning:rest rdf:resource="&UrbanFunctionalZoning;nir"/>
+        <UrbanFunctionalZoning:first rdf:resource="&UrbanFunctionalZoning;taskinstance15"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence16 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence16">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+        <UrbanFunctionalZoning:rest rdf:resource="&UrbanFunctionalZoning;sequence17"/>
+        <UrbanFunctionalZoning:first rdf:resource="&UrbanFunctionalZoning;taskinstance16"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence17 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence17">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+        <UrbanFunctionalZoning:first rdf:resource="&UrbanFunctionalZoning;sequence18"/>
+        <UrbanFunctionalZoning:first rdf:resource="&UrbanFunctionalZoning;taskinstance17"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence18 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence18">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+        <UrbanFunctionalZoning:rest rdf:resource="&UrbanFunctionalZoning;nir"/>
+        <UrbanFunctionalZoning:first rdf:resource="&UrbanFunctionalZoning;taskinstance18"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence19 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence19">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+        <UrbanFunctionalZoning:rest rdf:resource="&UrbanFunctionalZoning;sequence20"/>
+        <UrbanFunctionalZoning:first rdf:resource="&UrbanFunctionalZoning;taskinstance19"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence2 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence2">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+        <UrbanFunctionalZoning:rest rdf:resource="&UrbanFunctionalZoning;sequence3"/>
+        <UrbanFunctionalZoning:first rdf:resource="&UrbanFunctionalZoning;taskinstance2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence20 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence20">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+        <UrbanFunctionalZoning:rest rdf:resource="&UrbanFunctionalZoning;nir"/>
+        <UrbanFunctionalZoning:first rdf:resource="&UrbanFunctionalZoning;taskinstance20"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence21 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence21">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence22 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence22">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence23 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence23">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence24 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence24">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence25 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence25">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence26 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence26">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence27 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence27">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence28 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence28">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence29 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence29">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence3 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence3">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+        <UrbanFunctionalZoning:first rdf:resource="&UrbanFunctionalZoning;taskinstance3"/>
+        <UrbanFunctionalZoning:rest rdf:resource="&UrbanFunctionalZoning;taskinstance4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence30 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence30">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence4 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence4">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+        <UrbanFunctionalZoning:first rdf:resource="&UrbanFunctionalZoning;RegionDivision"/>
+        <UrbanFunctionalZoning:rest rdf:resource="&UrbanFunctionalZoning;sequence5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence5 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence5">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+        <UrbanFunctionalZoning:rest rdf:resource="&UrbanFunctionalZoning;sequence6"/>
+        <UrbanFunctionalZoning:first rdf:resource="&UrbanFunctionalZoning;taskinstance5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence6 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence6">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+        <UrbanFunctionalZoning:rest rdf:resource="&UrbanFunctionalZoning;nir"/>
+        <UrbanFunctionalZoning:first rdf:resource="&UrbanFunctionalZoning;taskinstance6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence7 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence7">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+        <UrbanFunctionalZoning:rest rdf:resource="&UrbanFunctionalZoning;sequence8"/>
+        <UrbanFunctionalZoning:first rdf:resource="&UrbanFunctionalZoning;taskinstance7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence8 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence8">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+        <UrbanFunctionalZoning:rest rdf:resource="&UrbanFunctionalZoning;sequence9"/>
+        <UrbanFunctionalZoning:first rdf:resource="&UrbanFunctionalZoning;taskinstance8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#sequence9 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;sequence9">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Sequence"/>
+        <UrbanFunctionalZoning:rest rdf:resource="&UrbanFunctionalZoning;nir"/>
+        <UrbanFunctionalZoning:first rdf:resource="&UrbanFunctionalZoning;taskinstance9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#squarelength -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;squarelength">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Parameter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance1 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance1">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+        <UrbanFunctionalZoning:type rdf:resource="&UrbanFunctionalZoning;GetData"/>
+        <UrbanFunctionalZoning:hasParameters rdf:resource="&UrbanFunctionalZoning;area"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance10 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance10">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance11 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance11">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance12 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance12">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance13 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance13">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+        <UrbanFunctionalZoning:type rdf:resource="&UrbanFunctionalZoning;PeriodBlogData"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance14 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance14">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+        <UrbanFunctionalZoning:type rdf:resource="&UrbanFunctionalZoning;PeriodBlogDensity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance15 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance15">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+        <UrbanFunctionalZoning:type rdf:resource="&UrbanFunctionalZoning;StandardisedDensityMap"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance16 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance16">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+        <UrbanFunctionalZoning:type rdf:resource="&UrbanFunctionalZoning;GetText"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance17 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance17">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+        <UrbanFunctionalZoning:type rdf:resource="&UrbanFunctionalZoning;WordClip"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance18 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance18">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+        <UrbanFunctionalZoning:type rdf:resource="&UrbanFunctionalZoning;GenerateCloud"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance19 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance19">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+        <UrbanFunctionalZoning:type rdf:resource="&UrbanFunctionalZoning;OverlayAnalysis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance2 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance2">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+        <UrbanFunctionalZoning:type rdf:resource="&UrbanFunctionalZoning;Cluster"/>
+        <UrbanFunctionalZoning:hasParameters rdf:resource="&UrbanFunctionalZoning;nir"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance20 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance20">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+        <UrbanFunctionalZoning:type rdf:resource="&UrbanFunctionalZoning;POIratio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance21 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance21">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance22 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance22">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance23 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance23">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance24 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance24">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance25 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance25">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance26 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance26">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance27 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance27">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance28 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance28">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance29 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance29">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance3 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance3">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+        <UrbanFunctionalZoning:type rdf:resource="&UrbanFunctionalZoning;Visualization"/>
+        <UrbanFunctionalZoning:rest rdf:resource="&UrbanFunctionalZoning;nir"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance30 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance30">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance4 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance4">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance5 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance5">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+        <UrbanFunctionalZoning:type rdf:resource="&UrbanFunctionalZoning;RangeStat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance6 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance6">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+        <UrbanFunctionalZoning:type rdf:resource="&UrbanFunctionalZoning;TimeDistriCluster"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance7 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance7">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+        <UrbanFunctionalZoning:type rdf:resource="&UrbanFunctionalZoning;OverlayAnalysis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance8 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance8">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+        <UrbanFunctionalZoning:type rdf:resource="&UrbanFunctionalZoning;BlogNumberStat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#taskinstance9 -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;taskinstance9">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;TaskInstance"/>
+        <UrbanFunctionalZoning:type rdf:resource="&UrbanFunctionalZoning;BlogNumberRatio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#word -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;word">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Parameter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/UrbanFunctionalZoning#wordfreqency -->
+
+    <owl:NamedIndividual rdf:about="&UrbanFunctionalZoning;wordfreqency">
+        <rdf:type rdf:resource="&UrbanFunctionalZoning;Parameter"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,588 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://lmars.whu.edu.cn/GeoService/Domain.owl#"
+     xml:base="http://lmars.whu.edu.cn/GeoService/Domain.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#greaterThan -->
+
+    <owl:ObjectProperty rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#greaterThan">
+        <rdfs:domain rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#latitude"/>
+        <rdfs:domain rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#longitude"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&owl;topDataProperty"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;float"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#hasLatitude -->
+
+    <owl:ObjectProperty rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#hasLatitude">
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#hasLogitude -->
+
+    <owl:ObjectProperty rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#hasLogitude">
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#lessThan -->
+
+    <owl:ObjectProperty rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#lessThan">
+        <rdfs:domain rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#latitude"/>
+        <rdfs:domain rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#longitude"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&owl;topDataProperty"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;float"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#timeFrom -->
+
+    <owl:ObjectProperty rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#timeFrom"/>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#timeTo -->
+
+    <owl:ObjectProperty rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#timeTo"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#table -->
+
+    <owl:DatatypeProperty rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#table"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#Analysis -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#Analysis">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#Concept -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#Concept"/>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#DataType -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#DataType"/>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#DensityCalculation -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#DensityCalculation">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#NumericalAnalysis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#Grid -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#Grid">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#SpatialAnalysis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#HumanDynamic -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#HumanDynamic">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#K-means -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#K-means">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#cluster"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#NumericalAnalysis -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#NumericalAnalysis">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Analysis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#Property -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#Property">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#Spatial -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#Spatial">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#DataType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#SpatialAnalysis -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#SpatialAnalysis">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Analysis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#Theme -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#Theme">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#social_media"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#Units -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#Units">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#Vector -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#Vector">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#SpatialAnalysis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#air_quality -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#air_quality">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Theme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#area -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#area">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Spatial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#cluster -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#cluster">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Grid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#day -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#day">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#timeUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#dengue -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#dengue">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#disease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#disease -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#disease">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Theme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#hour -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#hour">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#timeUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#id -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#id">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#latitude -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#latitude">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Spatial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#length -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#length">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#measure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#line -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#line">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Spatial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#location -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#location">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#longitude -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#longitude">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Spatial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#measure -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#measure">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Units"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#minute -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#minute">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#timeUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#month -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#month">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#timeUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#overlay -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#overlay">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Grid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#picture -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#picture">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#point -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#point">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Spatial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#quality_bad -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#quality_bad">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#air_quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#quality_good -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#quality_good">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#air_quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#second -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#second">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#timeUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#socialMediaApplication -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#socialMediaApplication">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#social_media"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#social_media -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#social_media">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#temporal -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#temporal">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#DataType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#terrorist -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#terrorist">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#voilence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#text -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#text">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#time-occurred -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#time-occurred">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#timeUnit -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#timeUnit">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Units"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#time_division -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#time_division">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#temporal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#time_period -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#time_period">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#temporal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#twitter -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#twitter">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#socialMediaApplication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#userName -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#userName">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#voilence -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#voilence">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Theme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#weibo -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#weibo">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#socialMediaApplication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#year -->
+
+    <owl:Class rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#year">
+        <rdfs:subClassOf rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#timeUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#atmospheric_haze -->
+
+    <owl:NamedIndividual rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#atmospheric_haze">
+        <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#air_quality"/>
+        <rdfs:comment>There are many serious health hazards associated with hazy weather</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#city -->
+
+    <owl:NamedIndividual rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#city">
+        <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#area"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#pm2.5 -->
+
+    <owl:NamedIndividual rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#pm2.5">
+        <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#air_quality"/>
+        <rdfs:comment>Particulate Matter2.5</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#theThemeOfSocialmediaData -->
+
+    <owl:NamedIndividual rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#theThemeOfSocialmediaData">
+        <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Theme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#timeDivisionToSplid -->
+
+    <owl:NamedIndividual rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#timeDivisionToSplid">
+        <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#time_division"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#timePeriodOfSocialmediaData -->
+
+    <owl:NamedIndividual rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#timePeriodOfSocialmediaData">
+        <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#time_period"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Domain.owl#urbanArea -->
+
+    <owl:NamedIndividual rdf:about="http://lmars.whu.edu.cn/GeoService/Domain.owl#urbanArea">
+        <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#area"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

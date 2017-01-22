@@ -1,0 +1,177 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:domain="http://lmars.whu.edu.cn/GeoService/Domain.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns="http://lmars.whu.edu.cn/GeoService/taskrepo#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:task="http://lmars.whu.edu.cn/GeoService/Task.owl#" > 
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo#S-Cluster_K-means">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Service"/>
+    <rdfs:comment>a  K-means cluster</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#0999caae-f698-4277-bc1c-8837ed2e3c74">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#TaskInstance"/>
+    <task:type rdf:resource="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#UrbanFunctionZoning"/>
+    <task:hasParameters rdf:resource="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#e9bc96a9-67dd-4f68-8d1a-37acb1f49c13"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#theme">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Parameter"/>
+    <rdfs:comment>the theme of social media data</rdfs:comment>
+    <task:hasConcept rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#pm2.5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#timePeroid">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Parameter"/>
+    <rdfs:comment>the time peroid of the socialmedia data</rdfs:comment>
+    <task:hasConcept rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#timePeriodOfSocialmediaData"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#fc180a13-fa97-4f85-b804-272211e9703f">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Sequence"/>
+    <task:first rdf:resource="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#timePeroid"/>
+    <task:rest rdf:resource="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#8267138d-ace7-40db-9019-5c714fb332dd"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo#S-Calculate_Density_Period">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Service"/>
+    <rdfs:comment>calculate the density ,per time Period</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo#S-GridDivision">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Service"/>
+    <rdfs:comment>get the devision of region by the grid</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo#S-Standardization_Density_Grid">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Service"/>
+    <rdfs:comment> standardization of the desity by grid</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo#S-GetData_Blog_Period">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Service"/>
+    <rdfs:comment>get Blog Data by time  period </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo#S-Overlay">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Service"/>
+    <rdfs:comment>to give an overlay calculation result</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskRepo">
+    <owl:imports rdf:resource="F:\0106\1223\domain.owl"/>
+    <owl:imports rdf:resource="F:\0106\1223\task.owl"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo#S-GetData_Blog">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Service"/>
+    <rdfs:comment>get Blog Data.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#getData">
+    <rdfs:comment>get weibo data</rdfs:comment>
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#AbstractTask"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo#S-WordClip">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Service"/>
+    <rdfs:comment>give a set of data,which is cliped by the given key words 
+  </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#getData_para2">
+    <task:hasConcept rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#timePeriodOfSocialmediaData"/>
+    <rdfs:comment>the peroid of weibo data</rdfs:comment>
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Parameter"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo#S-BlogRatio_Hour">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Service"/>
+    <rdfs:comment>get the ratio of Blog . use the number of bolg in  the grid  a day devided by the number of  blog in the grid an hour. the result will be a dataset.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo#S-GridDistri_Map">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Service"/>
+    <rdfs:comment>get the Grid Distri Map</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#b2fc6358-94b9-4afa-b319-893cb1f57b87">
+    <task:hasParameters rdf:resource="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#791931da-2a8d-43f8-b565-7753689cb445"/>
+    <task:type rdf:resource="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#getData"/>
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#TaskInstance"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#791931da-2a8d-43f8-b565-7753689cb445">
+    <task:rest rdf:resource="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#4d806ed8-4fdc-4607-941d-cd823032937d"/>
+    <task:first rdf:resource="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#getData_para1"/>
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Sequence"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo#S-Cluster_Grid">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Service"/>
+    <rdfs:comment>Grid StandardistCluster</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#UrbanFunctionZoning">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#AbstractTask"/>
+    <rdfs:comment>the city function zoning</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo#S-BolgNumber_Hour">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Service"/>
+    <rdfs:comment>get the number of Blog . get  the number of bolg in  the grid  each hour. the result will be a dataset.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo#S-PoiRatio">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Service"/>
+    <rdfs:comment>get the ratio of poi</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo#S-Calculate_Density">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Service"/>
+    <rdfs:comment>calculate the density </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#8267138d-ace7-40db-9019-5c714fb332dd">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Sequence"/>
+    <task:rest rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#area">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Parameter"/>
+    <rdfs:comment>the city area</rdfs:comment>
+    <task:hasConcept rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#city"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:imports rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl"/>
+    <owl:imports rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#68ec80bb-d3cb-4172-9452-4d950e12a22d">
+    <task:rest rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#nil"/>
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Sequence"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo#S-VIsualization_WordCloud">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Service"/>
+    <rdfs:comment>give a word cloud of a set of blog text data</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo#S-VectorDistri_Map">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Service"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#78e15f53-3af2-4369-adcc-894d566b4e43">
+    <task:rest rdf:resource="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#68ec80bb-d3cb-4172-9452-4d950e12a22d"/>
+    <task:first rdf:resource="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#getData_para3"/>
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Sequence"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#4d806ed8-4fdc-4607-941d-cd823032937d">
+    <task:rest rdf:resource="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#78e15f53-3af2-4369-adcc-894d566b4e43"/>
+    <task:first rdf:resource="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#getData_para2"/>
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Sequence"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo#S-GetData_BlogText">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Service"/>
+    <rdfs:comment>get Text data of blog</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo#S-Visualization_TimeDistribution">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Service"/>
+    <rdfs:comment>give the visualization by the distribution of time</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#getData_para1">
+    <task:hasConcept rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#urbanArea"/>
+    <rdfs:comment>the area of the weibo Data </rdfs:comment>
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Parameter"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#getData_para3">
+    <task:hasConcept rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#pm2.5"/>
+    <rdfs:comment>the theme of data</rdfs:comment>
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Parameter"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#ea96421e-1f97-480a-b0e8-c9a2f94c86a5">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Sequence"/>
+    <task:first rdf:resource="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#theme"/>
+    <task:rest rdf:resource="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#fc180a13-fa97-4f85-b804-272211e9703f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#e9bc96a9-67dd-4f68-8d1a-37acb1f49c13">
+    <rdf:type rdf:resource="http://lmars.whu.edu.cn/GeoService/Task.owl#Sequence"/>
+    <task:first rdf:resource="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#area"/>
+    <task:rest rdf:resource="http://lmars.whu.edu.cn/GeoService/taskrepo.owl#ea96421e-1f97-480a-b0e8-c9a2f94c86a5"/>
+  </rdf:Description>
+</rdf:RDF>

@@ -1,0 +1,285 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY task "http://lmars.whu.edu.cn/GeoService/Task.owl#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+    <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://lmars.whu.edu.cn/GeoService/Task.owl#"
+     xml:base="http://lmars.whu.edu.cn/GeoService/Task.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:task="http://lmars.whu.edu.cn/GeoService/Task.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://lmars.whu.edu.cn/GeoService/Task.owl">
+        <owl:imports rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Task.owl#first -->
+
+    <owl:ObjectProperty rdf:about="&task;first">
+        <rdfs:domain rdf:resource="&task;Sequence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Task.owl#hasConcept -->
+
+    <owl:ObjectProperty rdf:about="&task;hasConcept">
+        <rdfs:range rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Concept"/>
+        <rdfs:domain rdf:resource="&task;Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Task.owl#hasEffect -->
+
+    <owl:ObjectProperty rdf:about="&task;hasEffect">
+        <rdfs:domain rdf:resource="&task;ComplexTask"/>
+        <rdfs:domain rdf:resource="&task;SimpleTask"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&owl;topDataProperty"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Task.owl#hasInput -->
+
+    <owl:ObjectProperty rdf:about="&task;hasInput">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:range rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#DataType"/>
+        <rdfs:domain rdf:resource="&task;Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Task.owl#hasOutput -->
+
+    <owl:ObjectProperty rdf:about="&task;hasOutput">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:range rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#DataType"/>
+        <rdfs:domain rdf:resource="&task;Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Task.owl#hasParameters -->
+
+    <owl:ObjectProperty rdf:about="&task;hasParameters">
+        <rdfs:range rdf:resource="&task;Sequence"/>
+        <rdfs:domain rdf:resource="&task;TaskInstance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Task.owl#hasPrecondition -->
+
+    <owl:ObjectProperty rdf:about="&task;hasPrecondition">
+        <rdfs:domain rdf:resource="&task;ComplexTask"/>
+        <rdfs:domain rdf:resource="&task;SimpleTask"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&owl;topDataProperty"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Task.owl#hasSubTask -->
+
+    <owl:ObjectProperty rdf:about="&task;hasSubTask">
+        <rdfs:domain rdf:resource="&task;ComplexTask"/>
+        <rdfs:range rdf:resource="&task;Sequence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Task.owl#implement -->
+
+    <owl:ObjectProperty rdf:about="&task;implement">
+        <rdfs:range rdf:resource="&task;AbstractTask"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&task;ComplexTask"/>
+                    <rdf:Description rdf:about="&task;SimpleTask"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Task.owl#invoke -->
+
+    <owl:ObjectProperty rdf:about="&task;invoke">
+        <rdfs:range rdf:resource="&task;Service"/>
+        <rdfs:domain rdf:resource="&task;SimpleTask"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Task.owl#rest -->
+
+    <owl:ObjectProperty rdf:about="&task;rest">
+        <rdfs:domain rdf:resource="&task;Sequence"/>
+        <rdfs:range rdf:resource="&task;Sequence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Task.owl#type -->
+
+    <owl:ObjectProperty rdf:about="&task;type">
+        <rdfs:range rdf:resource="&task;AbstractTask"/>
+        <rdfs:domain rdf:resource="&task;TaskInstance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Task.owl#AbstractTask -->
+
+    <owl:Class rdf:about="&task;AbstractTask">
+        <rdfs:subClassOf rdf:resource="&task;Task"/>
+        <owl:disjointWith rdf:resource="&task;ComplexTask"/>
+        <owl:disjointWith rdf:resource="&task;SimpleTask"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Task.owl#ComplexTask -->
+
+    <owl:Class rdf:about="&task;ComplexTask">
+        <rdfs:subClassOf rdf:resource="&task;Task"/>
+        <owl:disjointWith rdf:resource="&task;SimpleTask"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Task.owl#Parameter -->
+
+    <owl:Class rdf:about="&task;Parameter">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&task;hasConcept"/>
+                <owl:someValuesFrom rdf:resource="http://lmars.whu.edu.cn/GeoService/Domain.owl#Concept"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Task.owl#Sequence -->
+
+    <owl:Class rdf:about="&task;Sequence">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&task;first"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&task;rest"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Task.owl#Service -->
+
+    <owl:Class rdf:about="&task;Service"/>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Task.owl#SimpleTask -->
+
+    <owl:Class rdf:about="&task;SimpleTask">
+        <rdfs:subClassOf rdf:resource="&task;Task"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Task.owl#Task -->
+
+    <owl:Class rdf:about="&task;Task"/>
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Task.owl#TaskInstance -->
+
+    <owl:Class rdf:about="&task;TaskInstance"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://lmars.whu.edu.cn/GeoService/Task.owl#nil -->
+
+    <owl:NamedIndividual rdf:about="&task;nil">
+        <rdf:type rdf:resource="&task;Sequence"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
